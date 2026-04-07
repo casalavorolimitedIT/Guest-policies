@@ -1,65 +1,82 @@
-import Image from "next/image";
+import Link from "next/link";
+
+const properties = [
+  {
+    number: "01",
+    name: "Wuse",
+    href: "/wuse-residence",
+  },
+  {
+    number: "02",
+    name: "Maitama",
+    href: "/maitama-residence",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="min-h-screen bg-[#0c0c0c] flex flex-col items-center justify-center px-6 py-16">
+      {/* Header */}
+      <div className="text-center mb-14">
+        <p className="text-[10px] uppercase tracking-[0.35em] text-amber-400/60 mb-4">
+          Guest Policies
+        </p>
+        <h1 className="text-4xl md:text-5xl font-extralight text-white tracking-tight font-(family-name:--font-cormorant)">
+          The Residence
+        </h1>
+        <div className="mt-4 mx-auto w-10 h-px bg-amber-400/30" />
+        <p className="text-zinc-500 text-sm mt-4 tracking-wide">
+          Select a property to view its rules &amp; guidelines
+        </p>
+      </div>
+
+      {/* Cards */}
+      <div className="flex flex-col sm:flex-row gap-4 w-full max-w-xl">
+        {properties.map((property) => (
+          <Link
+            key={property.name}
+            href={property.href}
+            className="group relative flex-1 overflow-hidden rounded-2xl border border-white/[0.07] bg-linear-to-b from-zinc-900 to-[#0f0f0f] p-8 transition-all duration-300 hover:border-amber-400/25 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_0_1px_rgba(251,191,36,0.1)]"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+            {/* Top shimmer line */}
+            <span className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-amber-400/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+            {/* Corner accent */}
+            <span className="absolute top-5 right-5 w-1.5 h-1.5 rounded-full bg-amber-400/20 group-hover:bg-amber-400/60 transition-colors duration-300" />
+
+            {/* Content */}
+            <div className="mb-10">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-amber-400/40 mb-5 group-hover:text-amber-400/70 transition-colors duration-300">
+                Property {property.number}
+              </p>
+              <h2 className="text-3xl font-extralight text-white leading-none">
+                {property.name}
+              </h2>
+              <p className="text-zinc-600 text-sm mt-1.5 font-light tracking-wide">
+                Residence
+              </p>
+            </div>
+
+            {/* CTA */}
+            <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-zinc-600 group-hover:text-amber-400/70 transition-colors duration-300">
+              <span>View policies</span>
+              <svg
+                className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                />
+              </svg>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
