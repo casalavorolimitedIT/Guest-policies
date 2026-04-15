@@ -174,25 +174,46 @@ export default function WusePage() {
         <p className="text-[11px] text-zinc-700 tracking-widest uppercase">
           The Wuse Residence &mdash; Guest Policies
         </p>
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 mt-4 text-[10px] uppercase tracking-[0.25em] text-zinc-700 hover:text-amber-400/60 transition-colors duration-200"
-        >
-          <svg
-            className="w-3 h-3"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-zinc-700 transition-colors duration-200 hover:text-amber-400/60"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-            />
-          </svg>
-          Back to home
-        </Link>
+            <svg
+              className="w-3 h-3"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+              />
+            </svg>
+            Back to home
+          </Link>
+          <Link
+            href="/events"
+            className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-zinc-700 transition-colors duration-200 hover:text-amber-400/60"
+          >
+            Event guide
+            <svg
+              className="w-3 h-3"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </Link>
+        </div>
       </div>
     </div>
   );

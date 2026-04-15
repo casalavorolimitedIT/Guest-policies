@@ -5,11 +5,25 @@ const properties = [
     number: "01",
     name: "Wuse",
     href: "/wuse-residence",
+    eyebrow: "Property 01",
+    suffix: "Residence",
+    description: "Full stay rules, deposit guidance, and guest conduct policy.",
   },
   {
     number: "02",
     name: "Maitama",
     href: "/maitama-residence",
+    eyebrow: "Property 02",
+    suffix: "Residence",
+    description: "Residence-specific rules for check-in, visitors, smoking, and damages.",
+  },
+  {
+    number: "03",
+    name: "Events",
+    href: "/events",
+    eyebrow: "Shared guide",
+    suffix: "Planning",
+    description: "Use the event overview page, then jump into the correct residence policy.",
   },
 ];
 
@@ -26,12 +40,12 @@ export default function Home() {
         </h1>
         <div className="mt-4 mx-auto w-10 h-px bg-amber-400/30" />
         <p className="text-zinc-500 text-sm mt-4 tracking-wide">
-          Select a property to view its rules &amp; guidelines
+          Select a residence or the event guide to move through the full guest journey
         </p>
       </div>
 
       {/* Cards */}
-      <div className="flex flex-col sm:flex-row gap-4 w-full max-w-xl">
+      <div className="grid w-full max-w-4xl gap-4 md:grid-cols-3">
         {properties.map((property) => (
           <Link
             key={property.name}
@@ -47,19 +61,22 @@ export default function Home() {
             {/* Content */}
             <div className="mb-10">
               <p className="text-[10px] uppercase tracking-[0.3em] text-amber-400/40 mb-5 group-hover:text-amber-400/70 transition-colors duration-300">
-                Property {property.number}
+                {property.eyebrow}
               </p>
               <h2 className="text-3xl font-extralight text-white leading-none">
                 {property.name}
               </h2>
               <p className="text-zinc-600 text-sm mt-1.5 font-light tracking-wide">
-                Residence
+                {property.suffix}
+              </p>
+              <p className="text-zinc-500 text-sm mt-5 leading-6">
+                {property.description}
               </p>
             </div>
 
             {/* CTA */}
             <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-zinc-600 group-hover:text-amber-400/70 transition-colors duration-300">
-              <span>View policies</span>
+              <span>{property.name === "Events" ? "Open guide" : "View policies"}</span>
               <svg
                 className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-1"
                 fill="none"
