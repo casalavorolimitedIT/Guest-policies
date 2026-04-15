@@ -206,7 +206,7 @@ export default function EventImageStage() {
           </div>
 
           {/* Hint bar — bottom centre */}
-          <div className="absolute bottom-5 left-1/2 z-20 -translate-x-1/2 select-none">
+          <div className="absolute bottom-5 hidden lg:block left-1/2 z-20 -translate-x-1/2 select-none">
             <p className="rounded-full border border-white/8 bg-black/55 px-5 py-2.5 text-center text-[10px] uppercase tracking-[0.25em] text-white/30 backdrop-blur-sm">
               Scroll to zoom · Drag to pan · + / − keys · Esc to close
             </p>
