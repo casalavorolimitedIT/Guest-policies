@@ -25,6 +25,14 @@ const properties = [
     suffix: "Planning",
     description: "Use the event overview page, then jump into the correct residence policy.",
   },
+  {
+    number: "04",
+    name: "Laundry",
+    href: "/laundry",
+    eyebrow: "Laundry price guide",
+    suffix: "Planning",
+    description: "A quick reference for laundry pricing to help guests plan their stay.",
+  },
 ];
 
 export default function Home() {
