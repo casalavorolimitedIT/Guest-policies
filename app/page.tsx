@@ -33,6 +33,22 @@ const properties = [
     suffix: "Planning",
     description: "A quick reference for laundry pricing to help guests plan their stay.",
   },
+  {
+    number: "05",
+    name: "Coming Soon",
+    href: "#",
+    eyebrow: "",
+    suffix: "",
+    description: "More policies and guides are on the way. Stay tuned for updates covering dining, amenities, and more!",
+  },
+  // {
+  //   number: "04",
+  //   name: "Laundry",
+  //   href: "/laundry",
+  //   eyebrow: "Laundry price guide",
+  //   suffix: "Planning",
+  //   description: "A quick reference for laundry pricing to help guests plan their stay.",
+  // },
 ];
 
 export default function Home() {
@@ -84,7 +100,7 @@ export default function Home() {
 
             {/* CTA */}
             <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-zinc-600 group-hover:text-amber-400/70 transition-colors duration-300">
-              <span>{property.name === "Events" ? "Open guide" : "View policies"}</span>
+              <span>{property.name === "Events" ? "Open guide" : property.name === "Laundry" ? "View Prices" : "See you soon"}</span>
               <svg
                 className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-1"
                 fill="none"
