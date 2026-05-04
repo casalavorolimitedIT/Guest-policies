@@ -15,7 +15,8 @@ const properties = [
     href: "/maitama-residence",
     eyebrow: "Property 02",
     suffix: "Residence",
-    description: "Residence-specific rules for check-in, visitors, smoking, and damages.",
+    description:
+      "Residence-specific rules for check-in, visitors, smoking, and damages.",
   },
   {
     number: "03",
@@ -23,7 +24,8 @@ const properties = [
     href: "/events",
     eyebrow: "Shared guide",
     suffix: "Planning",
-    description: "Use the event overview page, then jump into the correct residence policy.",
+    description:
+      "Use the event overview page, then jump into the correct residence policy.",
   },
   {
     number: "04",
@@ -31,7 +33,8 @@ const properties = [
     href: "/laundry",
     eyebrow: "Laundry price guide",
     suffix: "Planning",
-    description: "A quick reference for laundry pricing to help guests plan their stay.",
+    description:
+      "A quick reference for laundry pricing to help guests plan their stay.",
   },
   {
     number: "05",
@@ -39,7 +42,8 @@ const properties = [
     href: "#",
     eyebrow: "",
     suffix: "",
-    description: "More policies and guides are on the way. Stay tuned for updates covering dining, amenities, and more!",
+    description:
+      "More policies and guides are on the way. Stay tuned for updates covering dining, amenities, and more!",
   },
   // {
   //   number: "04",
@@ -64,7 +68,8 @@ export default function Home() {
         </h1>
         <div className="mt-4 mx-auto w-10 h-px bg-amber-400/30" />
         <p className="text-zinc-500 text-sm mt-4 tracking-wide">
-          Select a residence or the event guide to move through the full guest journey
+          Select a residence or the event guide to move through the full guest
+          journey
         </p>
       </div>
 
@@ -100,7 +105,15 @@ export default function Home() {
 
             {/* CTA */}
             <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-zinc-600 group-hover:text-amber-400/70 transition-colors duration-300">
-              <span>{property.name === "Events" ? "Open guide" : property.name === "Laundry" ? "View Prices" : "See you soon"}</span>
+              <span>
+                {property.name === "Events"
+                  ? "Open guide"
+                  : property.name === "Laundry"
+                    ? "View Prices"
+                    : property.name === "Coming Soon"
+                      ? "See you soon"
+                      : "View Policies"}
+              </span>
               <svg
                 className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-1"
                 fill="none"
