@@ -8,9 +8,9 @@ const sections = [
       "Standard Check-in Time: From 2:00 PM",
       "Standard Check-out Time: By 12:00 Noon",
       "Early check-in is subject to availability and may attract additional charges (₦50,000).",
-      "Late check-out is subject to availability and will attract a charge of ₦20,000 per hour.",
+      "Late Check-Out: ₦50,000 for extensions up to 5:00 PM. Any check-out after 5:00 PM will be charged at the full daily room rate",
       "Guests must present a valid government-issued ID or international passport at check-in.",
-      "A caution deposit of ₦200,000 is required before check-in. This deposit will cover incidental charges and any damages during the stay.",
+      "A caution deposit of ₦100,000 is required before check-in. This deposit will cover incidental charges and any damages during the stay.",
     ],
   },
   {
